@@ -1,0 +1,159 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-image: url("../Img/header1.jpg");
+    height: 200px;
+    background-size: cover;
+    color: rgb(208, 208, 208);
+    text-shadow: 2px 2px 4px rgb(0, 0, 0,1);
+    text-align: center;
+    background-position: center;
+
+    .title {
+        padding: 50px 50px 10px 50px;
+        z-index: 1;
+        width: 100%;
+    }
+
+    .sub-title {
+        padding-bottom: 120px;
+        z-index: 2;
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .bg-dark {
+        height: 200px;
+        width: 100%;
+        position: absolute;
+        background-color: rgba(0,0,0,0.5);
+    }
+}
+
+.from-author {
+    text-align: center;
+    font-size: 15px;
+    padding: 20px 20%;
+    font-family: Pacifico, sans-serif;
+}
+
+.author {
+    padding-right: 10%;
+    font-family: Pacifico, sans-serif;
+    font-size: 12px;
+    text-align: right;
+    color: dimgray;
+}
+
+.tales {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: rgb(251, 249, 239);
+    justify-content: space-evenly;
+}
+
+.tale {
+    display: flex;
+    flex-wrap: wrap;
+    width: 40vw;
+    height: 40vw;
+    max-width: 400px;
+    max-height: 500px;
+    margin-top: 15px;
+    background-color: red;
+    border-radius: 25px;
+    font-family: "Merienda";
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+
+    .tales-name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 35%;
+        max-height: 100%;
+        text-decoration: none;
+        background-color: rgba(0,0,0,0.7);
+        color: rgb(236, 236, 236);
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 5px;
+        overflow: auto;
+    }
+}
+
+.tale1 {
+    background-image: url("../Img/kapturek.jpg");
+}
+
+.tale2 {
+    background-image: url("../Img/stoliczku.jpg");
+}
+
+.tale3 {
+    background-image: url("../Img/sniezka.jpg");
+}
+
+.tale4 {
+    background-image: url("../Img/roszpunka.jpg");
+}
+
+.tale5 {
+    background-image: url("../Img/jas-i-malgosia.jpg");
+}
+
+.tale6 {
+    background-image: url("../Img/jaga.jpg");
+}
+
+
+@media (min-width: 576px) {
+    .head {
+        height: 400px;
+
+        .title {
+            font-size: 65px;
+            padding-top: 120px;
+        }
+
+        .sub-title {
+            font-size: 30px;
+            padding-bottom: 150px;
+        }
+
+        .bg-dark {
+            height: 400px;
+        }
+    }
+
+    .from-author {
+        font-size: 25px;
+        padding: 35px 30%;
+        font-family: Pacifico, sans-serif;
+    }
+
+    .author {
+        padding-right: 25%;
+        font-family: Pacifico, sans-serif;
+        font-size: 20px;
+        text-align: right;
+    }
+}
