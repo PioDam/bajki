@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using bajki.Models;
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
@@ -12,7 +13,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;600;700&display=swap"
 		  rel="stylesheet" />
-	<link rel="stylesheet" href="/Css/css.css" />
+	<link rel="stylesheet" href="/Css/bajki.css" />
 </head>
 <body>
 	<header class="head">
@@ -29,24 +30,20 @@
 		<p>~Imie Nazwisko</p>
 	</div>
 	<main>
+		@{
+			List<Tale> TaleList = ViewBag.TaleList;
+		}
 		<div class="tales">
-			<a href="#" class="tale tale1"><div class="tales-name">Czerwony kapturek</div></a>
-			<a href="" class="tale tale2">
-				<div class="tales-name">Stoliczku nakryj się</div>
-			</a>
-			<a href="" class="tale tale3">
-				<div class="tales-name">Królewna Śnieżka</div>
-			</a>
-			<a href="" class="tale tale4">
-				<div class="tales-name">Roszpunka</div>
-			</a>
-			<a href="" class="tale tale5">
-				<div class="tales-name">Jaś i Małgosia</div>
-			</a>
-			<a href="" class="tale tale6">
-				<div class="tales-name">Baba Jaga</div>
-			</a>
+			@foreach(Tale tale in TaleList)
+			{
+
+
+				<a href="@tale.Id" class="tale" style='background-image: url(@tale.Miniature); text-decoration:none;'>
+					<div class="tales-name">@tale.Title</div>
+				</a>
+			}
 		</div>
 	</main>
+	<script src="/JS/index.js"></script>
 </body>
 </html>

@@ -6,5 +6,21 @@
   {
     "outputFile": "wwwroot/Css/css.css",
     "inputFile": "wwwroot/Css/css.scss"
+  },
+  {
+    "outputFile": "wwwroot/Css/login.css",
+    "inputFile": "wwwroot/Css/login.scss"
+  },
+  {
+    "outputFile": "wwwroot/Css/tale.css",
+    "inputFile": "wwwroot/Css/tale.scss"
+  },
+  {
+    "outputFile": "wwwroot/Css/bajki.css",
+    "inputFile": "wwwroot/Css/bajki.scss"
+  },
+  {
+    "outputFile": "wwwroot/Css/AdminPannel.css",
+    "inputFile": "wwwroot/Css/AdminPannel.scss"
   }
 ]

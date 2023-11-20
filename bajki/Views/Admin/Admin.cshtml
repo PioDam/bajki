@@ -1,0 +1,76 @@
+﻿@using bajki.Models;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Bajki</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+		  rel="stylesheet" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;600;700&display=swap"
+		  rel="stylesheet" />
+	<link rel="stylesheet" href=@ViewBag.Url />
+	<link rel="stylesheet" href="/Css/bajki.css" />
+	<link rel="stylesheet" href="/Css/AdminPannel.css" />
+</head>
+<body>
+	<nav class="main-nav">
+		<div class="nav-title"> Admin Pannel</div>
+		<div class="add-button nav-button"><a href="/admin/dodaj">Dodaj Bajkę</a></div>
+		<div class="edit-button nav-button"><a href="/admin/edytuj">Edytuj Bajkę</a></div>
+		<div class="delete-button nav-button"><a href="/admin/usun">Usuń bajkę</a></div>
+		<div class="log-out-button nav-button"><a href="/admin/wyloguj">Wyloguj</a></div>
+	</nav>
+	@{
+		List<Tale> TaleList = ViewBag.TaleList;
+	}
+	<div class="nav-list edit">
+		@*<div class="edit-list-tale">Wybierz, którą bajkę chcesz edytować</div>*@
+		@foreach (Tale tale in TaleList)
+		{
+			<div class="edit-list-tale"><a href="/admin/edytuj/@tale.Id">@tale.Title</a></div>
+		}
+	</div>
+
+	<div class="nav-list delete">
+		@*<div class="edit-list-tale">Wybierz, którą bajkę chcesz edytować</div>*@
+		@foreach (Tale tale in TaleList)
+		{
+			<div class="edit-list-tale"><a href="admin/usun/@tale.Id">@tale.Title</a></div>
+		}
+	</div>
+
+	<main>
+
+		<div class="tales" style="margin-top:0px">
+			@foreach (Tale tale in TaleList)
+			{
+				<div class="tale" style='background-image: url(@tale.Miniature); text-decoration:none;'>
+					<div class="tale-menu">
+						<div class="top menu">
+							<div class="top-icon"><a href="admin/edytuj/@tale.Id"><div class="arrow"><i class="ti ti-settings"></i></div></a></div>
+							<div class="top-icon"><div class="arrow"><i class="ti ti-arrow-narrow-up"></i></div></div>
+							<div class="top-icon"><div class="arrow"><i class="ti ti-trash"></i></div></div>
+						</div>
+						<div class="mid menu">
+							<div class="left"><div class="arrow"><i class="ti ti-arrow-narrow-left"></i></div></div>
+							<div class="center"></div>
+							<div class="right"><div class="arrow"><i class="ti ti-arrow-narrow-right"></i></div></div>
+						</div>
+						<div class="bot menu">
+							<div class="top-icon"><div class="arrow"><i class="ti ti-arrow-narrow-down"></i></div></div></div>
+					</div>
+			
+
+					<div class="tales-name">@tale.Title</div>
+				</div>
+			}
+		</div>
+	</main>
+	<script src="/JS/index.js"></script>
+</body>
+</html>

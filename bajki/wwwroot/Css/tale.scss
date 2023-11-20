@@ -1,0 +1,222 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+body {
+    background-image: url(../Img/kapturek.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment:fixed;
+}
+.bgc {
+    width: 100%;
+    height: auto;
+    animation: animation1 2.5s forwards;
+}
+.tales{
+    
+}
+.tale {
+
+
+    opacity: 0;
+    animation: invisible 3s forwards 1.5s;
+    min-height: 100vh;
+    padding: 3% 1%;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    font-size: 30px;
+    color:white;
+}
+/*.tale-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}*/
+.tale-title::first-letter {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 70px;
+    text-transform: uppercase;
+}
+.hidden-legend {
+    display: flex;
+    position: fixed;
+    top: 9.5%;
+    right: calc(5.5% + 60px);
+    justify-content: end;
+    align-items: end;
+    flex-direction: column;
+    visibility:hidden;
+    .legend {
+        height: 60px;
+        padding: 19% 0px;
+    }
+
+}
+@mixin option {
+    min-width: 280px;
+    max-width: 50vw;
+    background-color: black;
+    border: 2px solid dimgray;
+    border-radius: 25px;
+
+    max-height: 40vh;
+    overflow: auto;
+}
+
+.hidden-option {
+    position: fixed;
+    top: 10%;
+    right: calc(5.5% + 60px);
+
+    .find-option {
+        @include option;
+        display:none;
+        padding-left: 10%;
+        padding: 22.5px 10%;
+
+
+        input {
+            width: 90%;
+            height: 30px;
+        }
+    }
+
+    .show-all-option {
+        @include option;
+        display: none;
+        min-height: 170px;
+        padding: 20px 40px;
+
+        .show-all-title {
+            font-size: 22px;
+            color: white;
+            line-height: 40px;
+        }
+
+        .show-all-tale {
+            padding: 1px 0;
+
+            a {
+                text-decoration: none;
+                color: dimgray;
+            }
+
+            a:hover {
+                color: white;
+            }
+        }
+    }
+}
+
+
+
+
+.tale-content {
+    display: flex;
+    margin-left: 20%;
+    width: 75%;
+    color: gray;
+    font-size: 18px;
+    font-family: sans-serif;
+    line-height: 1.2;
+
+    .paragraph {
+        width: 80%;
+        margin-top: 1%;
+    }
+
+    .icons {
+        position: fixed;
+        top: 10%;
+        right: 5%;
+    }
+
+    .icon {
+        font-size: 200%;
+        border-radius: 50%;
+        border: 2px solid darkgray;
+        margin-top: 20%;
+        width: 60px;
+        height: 60px;
+        padding: 17%;
+
+        a {
+            text-decoration: none;
+            color: gray;
+        }
+
+        a:hover {
+            color: white;
+        }
+    }
+
+    .icon:hover {
+        border: 5px solid white;
+        padding: 12%;
+        color: white;
+    }
+
+    .next-icon:hover {
+    }
+
+    .back-icon {
+    }
+
+    .find-icon {
+    }
+
+    .burger-menu-icon {
+        cursor: pointer;
+    }
+
+    .ti:hover {
+        color: white;
+    }
+}
+
+@keyframes animation1{
+    from {
+        background-color: rgba(251, 249, 239,0);
+    }
+    to {
+        background-color: rgba(0,0,0,0.93);
+    }
+}
+@keyframes invisible {
+    from {
+        opacity:0;
+    }
+
+    to {
+        opacity:1;
+    }
+}
+@media(max-width:450px)
+{
+    .title-container {
+        display: flex;
+        justify-content:start;
+        align-items: center;
+        padding: 2%;
+        font-size: 30px;
+        color: white;
+    }
+
+    .tale-content{
+        width:90%;
+        font-size:14px;
+        margin-left:5%;
+    }
+}
+
+

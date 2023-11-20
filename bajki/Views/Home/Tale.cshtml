@@ -1,0 +1,98 @@
+﻿@using bajki.Models;
+<head>
+
+	<link rel="stylesheet" href=@ViewBag.url />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewBag.Tale.Title</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/Css/tale.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href=@ViewBag.url/>
+</head>
+
+<body style="background-image:url(@ViewBag.Tale.Picture)">
+	<div class="bgc"> 
+		<div class="tale">
+
+			<div class="title-container">
+				<div class="tale-title">@ViewBag.Tale.Title</div>
+
+			</div>
+
+
+
+
+@*			<div class="tale-content">@ViewBag.Tale.Content</div>*@
+			<div class ="tale-content">
+
+
+				<div class="paragraphs">
+					<div class="paragraph">@ViewBag.Tale.Paragraph1</div>
+					<div class="paragraph">@ViewBag.Tale.Paragraph2</div>
+					<div class="paragraph">@ViewBag.Tale.Paragraph3</div>
+					<div class="paragraph">@ViewBag.Tale.Paragraph4</div>
+					<div class="paragraph">@ViewBag.Tale.Paragraph5</div>
+					<div class="paragraph">@ViewBag.Tale.Paragraph6</div>
+					<div class="paragraph">@ViewBag.Tale.Paragraph7</div>
+					<div class="paragraph">@ViewBag.Tale.Paragraph8</div>
+					<div class="paragraph">@ViewBag.Tale.Paragraph9</div>
+
+				</div>
+				<div class="hidden-legend">
+
+					<div class="find legend">Szukaj</div>
+					<div class="show-all legend">Wyświetl wszystkie</div>
+					<div class="back legend">Wróć do strony głównej</div>
+					<div class="next legend">Następna bajka</div>
+
+
+				</div>
+
+				<div class="hidden-option">
+					<div class="find-option">
+						<div><input id="input" type="text" placeholder="Wyszukaj..."/> </div>
+					</div>
+					<div class="show-all-option">
+						@{
+							<div class="show-all-tale show-all-title">Wszystkie bajki:</div>
+							int tmp = 0;
+							foreach(Tale tale in ViewBag.talelist)
+							{
+								tmp += 1;
+								if (tale.Id != ViewBag.Tale.Id)
+								{
+									
+									<div class="show-all-tale"><span>@tmp. </span><a href="@tale.Id">@tale.Title</a></div>
+									
+								}
+							}
+						}
+					</div>
+				</div>
+
+
+				<div class="icons">
+					<div class="find-icon icon"><i class="ti ti-search"></i></div>
+					<div class="burger-menu-icon icon"><i class="ti ti-menu-2"></i></div>
+					<div class="back-icon icon"><a href="/"><i class="ti ti-arrow-back-up"></i></a></div>
+					@if(ViewBag.nextTale!=null)
+					{
+						<div class="next-icon icon"><a href="/@ViewBag.nextTale.Id"><i class="ti ti-arrow-right"></i></a></div>
+					}
+				</div>
+
+			</div >
+
+		
+		</div>
+	</div>
+	<script src="/JS/Tale.js"></script>
+</body>
+
+
+
+

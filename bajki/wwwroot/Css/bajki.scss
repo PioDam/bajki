@@ -3,7 +3,10 @@
     margin: 0;
     padding: 0;
 }
+a{
+    text-decoration:none;
 
+}
 header {
     display: flex;
     width: 100%;
@@ -16,6 +19,7 @@ header {
     text-shadow: 2px 2px 4px rgb(0, 0, 0,1);
     text-align: center;
     background-position: center;
+    
 
     .title {
         padding: 50px 50px 10px 50px;
@@ -56,9 +60,9 @@ header {
 .tales {
     display: flex;
     flex-wrap: wrap;
-    width: 100vw;
+    width: calc(100vw - 14.1px);
     margin-top: 10px;
-    padding: 10px 20px;
+    padding: 10px 5px;
     background-color: rgb(251, 249, 239);
     justify-content: space-evenly;
 }
@@ -89,7 +93,7 @@ header {
         justify-content: center;
         width: 100%;
         min-height: 35%;
-        max-height: 100%;
+        /*max-height: 100%;*/
         text-decoration: none;
         background-color: rgba(0,0,0,0.7);
         color: rgb(236, 236, 236);
@@ -99,31 +103,6 @@ header {
         overflow: auto;
     }
 }
-
-.tale1 {
-    background-image: url("../Img/kapturek.jpg");
-}
-
-.tale2 {
-    background-image: url("../Img/stoliczku.jpg");
-}
-
-.tale3 {
-    background-image: url("../Img/sniezka.jpg");
-}
-
-.tale4 {
-    background-image: url("../Img/roszpunka.jpg");
-}
-
-.tale5 {
-    background-image: url("../Img/jas-i-malgosia.jpg");
-}
-
-.tale6 {
-    background-image: url("../Img/jaga.jpg");
-}
-
 
 @media (min-width: 576px) {
     .head {

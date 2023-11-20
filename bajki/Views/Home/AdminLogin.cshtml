@@ -1,5 +1,45 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using bajki.Models;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<link rel="stylesheet" href=@ViewBag.url />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Zaloguj się</title>
+	<link rel="stylesheet" href="/Css/login.css" />
+
+</head>
+<body>
+	
+	<div class="main">
+
+		<form action="/admin" method="post">
+		
+			
+			<div class="main-container">
+				<div class="main-icon"><i class="ti ti-user-filled"></i></div>
+				<div class="login">
+					<span class="icon"><i class="ti ti-user"></i></span>
+				<input type="text" id="userInput" placeholder="Login" name="Login" class="input" />
+				</div>
+				<div class="password">
+					<span class="icon"><i class="ti ti-lock"></i></span>
+					<input type="password" placeholder="Hasło" name="Password" class="input" />
+				</div>
+			<div class="btn-container">
+				<button type="submit" class="btn">Zaloguj</button>
+			</div>
+			</div>
+		
+		</form>
+
+
+
+
+
+	</div>
+
+</body>
+</html>
+
