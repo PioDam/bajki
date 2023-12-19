@@ -15,7 +15,16 @@
     align-items: center;
     justify-content: space-around;
     color: dimgray;
+    z-index:6;
 
+    div {
+        text-decoration: none;
+        color: dimgray;
+        cursor:pointer;
+    }
+    div:hover{
+        color:white;
+    }
     a {
         text-decoration: none;
         color: dimgray;
@@ -50,18 +59,21 @@
         }
     }
 }
+
 .edit {
     visibility:hidden;
     left: calc(50% - 10px);
+    z-index:6;
 }
 .delete {
     visibility:hidden;
     left: calc(70% - 10px);
+    z-index:6;
 }
 
 
 .tale-menu {
-    visibility: hidden;
+ /*   visibility: hidden;*/
     height: 65%;
     width: 100%;
 
@@ -122,14 +134,13 @@
         border-radius: 100%;
         background-color: rgba(18, 18, 18, 1);
         color: dimgray;
+        font-size:30px;
+        cursor:pointer;
     }
 
-    .arrow:hover {
+    .ti:hover {
         color: white;
     }
-}
-.tale:hover>.tale-menu{
-    visibility:visible;
 }
 
 

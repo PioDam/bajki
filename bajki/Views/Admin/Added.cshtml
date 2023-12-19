@@ -1,0 +1,31 @@
+﻿@using bajki.Models;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Bajki</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+		  rel="stylesheet" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;600;700&display=swap"
+		  rel="stylesheet" />
+	<link rel="stylesheet" href=@ViewBag.Url />
+	<link rel="stylesheet" href="/Css/bajki.css" />
+	<link rel="stylesheet" href="/Css/AdminPannel.css" />
+	<link rel="stylesheet" href="/Css/addTale.css" />
+</head>
+<body>
+	@{
+		List<Tale> TaleList = ViewBag.TaleList;
+	}
+	<partial name="_NavPartialView"></partial>
+
+
+
+	<script src="/JS/AdminPannel.js"></script>
+</body>
+</html>

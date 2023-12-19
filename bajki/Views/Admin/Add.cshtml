@@ -1,5 +1,128 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using bajki.Models;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Bajki</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+		  rel="stylesheet" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;600;700&display=swap"
+		  rel="stylesheet" />
+	<link rel="stylesheet" href=@ViewBag.Url />
+	<link rel="stylesheet" href="/Css/bajki.css" />
+	<link rel="stylesheet" href="/Css/AdminPannel.css" />
+	<link rel="stylesheet" href="/Css/addTale.css" />
+</head>
+<body>
+    @{
+        List<Tale> TaleList = ViewBag.TaleList;
+        Tale taleToEdit = ViewBag.TaleToEdit;
+    }
+	<partial name="_NavPartialView"></partial>
+
+
+    <div class="blur">
+
+
+	    <main class="container">
+
+            <form action="/admin/dodano" method="post">
+
+                <div class="add-tale">Dodaj bajkę</div>
+
+
+                <div class="row">
+                    <label>Tytuł</label>
+                    <input id="title" name="Title" value="" placeholder="Tytuł" />
+
+                </div>
+
+                <div class="row">
+                    <label>Link obrazka na miniaturę</label>
+                    <input id="miniature" name="Miniature" value="" placeholder="Miniatura" />
+
+                </div>
+
+                <div class="row">
+                    <label>Link obrazka w większej rozdzielczości</label>
+                    <input id="picture" name="Picture" value="" placeholder="Obraz" />
+
+                </div>
+
+                <div class="row">
+                    <label>Pierwszy akapit</label>
+                    <textarea id="paragraph1" type="text" name="Paragraph1" value="" placeholder="Akapit1"></textarea>
+
+                </div>
+
+                <div class="row">
+
+                    <label>Drugi akapit</label>
+                    <textarea id="paragraph2" name="Paragraph2" value="" placeholder="Akapit2"></textarea>
+                </div>
+
+                <div class="row">
+
+                    <label>Trzeci akapit</label>
+                    <textarea id="paragraph3" name="Paragraph3" value="" placeholder="Akapit3"></textarea>
+                </div>
+
+                <div class="row">
+                    <label>Czwarty akapit</label>
+                    <textarea id="paragraph4" name="Paragraph4" value="" placeholder="Akapit4"></textarea>
+
+                </div>
+
+                <div class="row">
+                    <label>Piąty akapit</label>
+                    <textarea id="paragraph5" name="Paragraph5" value="" placeholder="Akapit5"></textarea>
+                </div>
+
+                <div class="row">
+                    <label>Szósty akapit</label>
+                    <textarea id="paragraph6" name="Paragraph6" value="" placeholder="Akapit6"></textarea>
+                </div>
+
+                <div class="row">
+                    <label>Siódmy akapit</label>
+                    <textarea id="paragraph7" name="Paragraph7" value="" placeholder="Akapit7"></textarea>
+                </div>
+
+
+                <div class="row">
+                    <label>Ósmy akapit</label>
+                    <textarea id="paragraph8" name="Paragraph8" value="" placeholder="Akapit8"></textarea>
+                </div>
+
+                <div class="row">
+                    <label>Dziewiąty akapit</label>
+                    <textarea id="paragraph9" name="Paragraph9" value="" placeholder="Akapit9"></textarea>
+                </div>
+
+
+
+                <button id="add-button" type="submit" disabled>Edytuj</button>
+
+
+
+            </form>
+	    </main>	
+    </div>
+
+
+
+
+
+
+
+
+
+	<script src="/JS/AdminPannel.js"></script>
+    <script src="/JS/AddTale.js"></script>
+</body>
+</html>

@@ -18,51 +18,30 @@
 	<link rel="stylesheet" href="/Css/AdminPannel.css" />
 </head>
 <body>
-	<nav class="main-nav">
-		<div class="nav-title"> Admin Pannel</div>
-		<div class="add-button nav-button"><a href="/admin/dodaj">Dodaj Bajkę</a></div>
-		<div class="edit-button nav-button"><a href="/admin/edytuj">Edytuj Bajkę</a></div>
-		<div class="delete-button nav-button"><a href="/admin/usun">Usuń bajkę</a></div>
-		<div class="log-out-button nav-button"><a href="/admin/wyloguj">Wyloguj</a></div>
-	</nav>
 	@{
 		List<Tale> TaleList = ViewBag.TaleList;
 	}
-	<div class="nav-list edit">
-		@*<div class="edit-list-tale">Wybierz, którą bajkę chcesz edytować</div>*@
-		@foreach (Tale tale in TaleList)
-		{
-			<div class="edit-list-tale"><a href="/admin/edytuj/@tale.Id">@tale.Title</a></div>
-		}
-	</div>
-
-	<div class="nav-list delete">
-		@*<div class="edit-list-tale">Wybierz, którą bajkę chcesz edytować</div>*@
-		@foreach (Tale tale in TaleList)
-		{
-			<div class="edit-list-tale"><a href="admin/usun/@tale.Id">@tale.Title</a></div>
-		}
-	</div>
+	<partial name="_NavPartialView"></partial>
 
 	<main>
 
 		<div class="tales" style="margin-top:0px">
 			@foreach (Tale tale in TaleList)
 			{
-				<div class="tale" style='background-image: url(@tale.Miniature); text-decoration:none;'>
+				<div class="tale" id="@tale.OrderID" style='background-image: url(@tale.Miniature); text-decoration:none;'>
 					<div class="tale-menu">
 						<div class="top menu">
-							<div class="top-icon"><a href="admin/edytuj/@tale.Id"><div class="arrow"><i class="ti ti-settings"></i></div></a></div>
-							<div class="top-icon"><div class="arrow"><i class="ti ti-arrow-narrow-up"></i></div></div>
-							<div class="top-icon"><div class="arrow"><i class="ti ti-trash"></i></div></div>
+							<div class="top-icon"><a href="/admin/edytuj/@tale.Id"><div class="arrow"><i class="ti ti-settings"></i></div></a></div>
+							<div class="top-icon up"><button class="arrow"><i class="ti ti-arrow-narrow-up"></i></button></div>
+							<div class="top-icon"><a href="/admin/usun/@tale.Id"><div class="arrow"><i class="ti ti-trash"></i></div></a></div>
 						</div>
 						<div class="mid menu">
-							<div class="left"><div class="arrow"><i class="ti ti-arrow-narrow-left"></i></div></div>
+							<div class="left"><button class="arrow"><i class="ti ti-arrow-narrow-left"></i></button></div>
 							<div class="center"></div>
-							<div class="right"><div class="arrow"><i class="ti ti-arrow-narrow-right"></i></div></div>
+							<div class="right"><button class="arrow"><i class="ti ti-arrow-narrow-right"></i></button></div>
 						</div>
 						<div class="bot menu">
-							<div class="top-icon"><div class="arrow"><i class="ti ti-arrow-narrow-down"></i></div></div></div>
+							<div class="top-icon down"><div class="arrow"><i class="ti ti-arrow-narrow-down"></i></div></div></div>
 					</div>
 			
 
@@ -71,6 +50,25 @@
 			}
 		</div>
 	</main>
-	<script src="/JS/index.js"></script>
+
+	<form action="/admin/zapisz" method="post">
+
+		<div class="inputs">
+			@foreach(Tale tale in TaleList)
+			{
+				string name = "intList[" + @tale.OrderID + "]";
+				string idd = "input" + tale.OrderID;
+				<input id="@idd" type="number" name="@name" value=@tale.OrderID />
+			}
+			<button type="submit" onclick="intList()">zapisz</button>
+		</div>
+
+
+
+
+	</form>
+
+	<script src="/JS/AdminPannel.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,77 @@
+﻿* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(../Img/jaga.jpg);
+  background-size: cover;
+}
+
+.blur {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 100px);
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  z-index: 3;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 20px;
+  margin: 45px;
+  width: 70%;
+  min-width: 400px;
+  border: 2px solid red;
+  border-radius: calc(5vh + 5vw);
+  background-color: rgb(18, 18, 18);
+}
+.container .add-tale {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0px;
+  width: 100%;
+  font-size: calc(2vw + 2vh);
+}
+.container .row {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20%;
+  padding: 15px 0px;
+  font-size: calc(1vw + 1vh);
+}
+.container input {
+  margin-top: 5px;
+  width: 65%;
+  height: calc(1.5vh + 1.5vw);
+  border-color: grey;
+  padding-left: 1%;
+}
+.container textarea {
+  margin-top: 5px;
+  width: 65%;
+  height: calc(3.5vh + 3.5vw);
+  border-color: grey;
+  padding: 1%;
+}
+.container button {
+  margin-top: 15px;
+  margin-left: 30%;
+  border: 2px solid white;
+  width: 30%;
+  height: calc(2vh + 2vw);
+  border-radius: 15px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.container button:disabled {
+  cursor: default;
+}

@@ -55,12 +55,13 @@ body {
     justify-content: end;
     align-items: end;
     flex-direction: column;
-    visibility:hidden;
+    visibility: hidden;
+
     .legend {
         height: 60px;
         padding: 19% 0px;
+        /*color:white;*/
     }
-
 }
 @mixin option {
     min-width: 280px;
@@ -132,7 +133,7 @@ body {
 
     .paragraph {
         width: 80%;
-        margin-top: 1%;
+        margin-top: 1.5%;
     }
 
     .icons {

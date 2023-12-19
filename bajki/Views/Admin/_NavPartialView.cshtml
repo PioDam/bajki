@@ -1,0 +1,25 @@
+﻿<nav class="main-nav">
+	<div class="nav-title"><a href="/admin">Admin Pannel</a> </div>
+	<div class="add-button nav-button"><a href="/admin/dodaj">Dodaj Bajkę</a></div>
+	<div class="edit-button nav-button"><div>Edytuj Bajkę</div></div>
+	<div class="delete-button nav-button"><div>Usuń bajkę</div></div>
+	<div class="log-out-button nav-button"><a href="/admin/wyloguj">Wyloguj</a></div>
+</nav>
+@{
+	List<Tale> TaleList = ViewBag.TaleList;
+}
+<div class="nav-list edit">
+	@*<div class="edit-list-tale">Wybierz, którą bajkę chcesz edytować</div>*@
+	@foreach (Tale tale in TaleList)
+	{
+		<div class="edit-list-tale"><a href="/admin/edytuj/@tale.Id">@tale.Title</a></div>
+	}
+</div>
+
+<div class="nav-list delete">
+	@*<div class="edit-list-tale">Wybierz, którą bajkę chcesz edytować</div>*@
+	@foreach (Tale tale in TaleList)
+	{
+		<div class="edit-list-tale"><a href="/admin/usun/@tale.Id">@tale.Title</a></div>
+	}
+</div>

@@ -22,5 +22,9 @@
   {
     "outputFile": "wwwroot/Css/AdminPannel.css",
     "inputFile": "wwwroot/Css/AdminPannel.scss"
+  },
+  {
+    "outputFile": "wwwroot/Css/addTale.css",
+    "inputFile": "wwwroot/Css/addTale.scss"
   }
 ]

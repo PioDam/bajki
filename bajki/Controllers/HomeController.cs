@@ -17,6 +17,14 @@ namespace bajki.Controllers
 			TaleList = _db.Tales.OrderBy(tale => tale.OrderID).ToList();
 		}
 
+        public List<string> myReplace(string str)
+        {
+            if (str == null) return null;
+            List <string> tmp=str.Split("\r\n").ToList();
+            return tmp;
+
+        }
+
 
 
         [Route("/")]
@@ -53,6 +61,16 @@ namespace bajki.Controllers
                 //trzeba zrobić strone błędu, jak ktoś wpisze złe id
 
             }
+            ViewBag.Paragraph1 = myReplace(tale.Paragraph1);
+            ViewBag.Paragraph2 = myReplace(tale.Paragraph2);
+            ViewBag.Paragraph3 = myReplace(tale.Paragraph3);
+            ViewBag.Paragraph4 = myReplace(tale.Paragraph4);
+            ViewBag.Paragraph5 = myReplace(tale.Paragraph5);
+            ViewBag.Paragraph6 = myReplace(tale.Paragraph6);
+            ViewBag.Paragraph7 = myReplace(tale.Paragraph7);
+            ViewBag.Paragraph8 = myReplace(tale.Paragraph8);
+            ViewBag.Paragraph9 = myReplace(tale.Paragraph9);
+
             ViewBag.Tale = tale;
 			ViewBag.url = url;
 			return View();

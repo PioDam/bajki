@@ -31,16 +31,84 @@
 
 
 				<div class="paragraphs">
-					<div class="paragraph">@ViewBag.Tale.Paragraph1</div>
-					<div class="paragraph">@ViewBag.Tale.Paragraph2</div>
-					<div class="paragraph">@ViewBag.Tale.Paragraph3</div>
-					<div class="paragraph">@ViewBag.Tale.Paragraph4</div>
-					<div class="paragraph">@ViewBag.Tale.Paragraph5</div>
-					<div class="paragraph">@ViewBag.Tale.Paragraph6</div>
-					<div class="paragraph">@ViewBag.Tale.Paragraph7</div>
-					<div class="paragraph">@ViewBag.Tale.Paragraph8</div>
-					<div class="paragraph">@ViewBag.Tale.Paragraph9</div>
-
+					<div class="paragraph">
+						@foreach(string str in ViewBag.Paragraph1)
+						{
+							@str <br />
+						}
+					</div>
+					@if(ViewBag.Paragraph2!=null)
+					{
+						<div class="paragraph">
+							@foreach (string str in ViewBag.Paragraph2)
+							{
+								@str <br />
+							}
+						</div>
+					}
+					@if (ViewBag.Paragraph3 != null)
+					{
+						<div class="paragraph">
+							@foreach (string str in ViewBag.Paragraph3)
+							{
+								@str <br />
+							}
+						</div>
+					}
+					@if(ViewBag.Paragraph4!=null)
+					{
+						<div class="paragraph">
+							@foreach (string str in ViewBag.Paragraph4)
+							{
+								@str <br />
+							}
+						</div>
+					}
+					@if(ViewBag.Paragraph5!=null)
+					{
+						<div class="paragraph">
+							@foreach (string str in ViewBag.Paragraph5)
+							{
+								@str <br />
+							}
+						</div>
+					}
+					@if (ViewBag.Paragraph6 != null)
+					{
+						<div class="paragraph">
+							@foreach (string str in ViewBag.Paragraph6)
+							{
+								@str <br />
+							}
+						</div>
+					}
+					@if(ViewBag.Paragraph7!=null)
+					{
+						<div class="paragraph">
+							@foreach (string str in ViewBag.Paragraph7)
+							{
+								@str <br />
+							}
+						</div>
+					}
+					@if (ViewBag.Paragraph8 != null)
+					{
+						<div class="paragraph">
+							@foreach (string str in ViewBag.Paragraph8)
+							{
+								@str <br />
+							}
+						</div>
+					}
+					@if (ViewBag.Paragraph9 != null)
+					{
+						<div class="paragraph">
+							@foreach (string str in ViewBag.Paragraph9)
+							{
+								@str <br />
+							}
+						</div>
+					}
 				</div>
 				<div class="hidden-legend">
 
